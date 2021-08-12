@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+      <canvas
+              id="canvas"
+              width="500"
+              height="200"
+              style="border: 1px solid black;"
+      ></canvas>
+    </div>
+    <div style="margin-top:5px">
+      <span>Size: </span>
+      <input
+              type="range"
+              min="1"
+              max="50"
+              value="25"
+              class="size"
+              id="sizeRange"
+      />
+    </div>
+    <div style="margin-top:5px">
+      <span>Alpha: </span>
+      <input
+              type="range"
+              min="0"
+              max="1"
+              value="1"
+              step="0.1"
+              class="alpha"
+              id="alphaRange"
+      />
+    </div>
+    <div style="margin-top:5px">
+      <span>Color: </span>
+      <input type="radio" name="colorRadio" value="black" checked />
+      <label for="black">Black</label>
+      <input type="radio" name="colorRadio" value="white" />
+      <label for="black">White</label>
+      <input type="radio" name="colorRadio" value="red" />
+      <label for="black">Red</label>
+      <input type="radio" name="colorRadio" value="green" />
+      <label for="black">Green</label>
+      <input type="radio" name="colorRadio" value="blue" />
+      <label for="black">Blue</label>
+    </div>
+    <div style="margin-top:5px">
+      <button id="clear" >Clear</button>
+    </div>
+    <br />
+    <input id="upload" type="file" accept="image/*" />
+    <p>
+      Start drawing on the blank canvas, or upload an image and use the brush to
+      draw on it
+    </p>
+    <script src="src/index.js"></script>
+  </body>
+</html>
