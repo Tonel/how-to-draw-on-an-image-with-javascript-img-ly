@@ -37,12 +37,6 @@ sizeElement.oninput = (e) => {
     size = e.target.value;
 };
 
-const alphaElement = document.querySelector("#alphaRange");
-let alpha = alphaElement.value;
-alphaElement.oninput = (e) => {
-    alpha = e.target.value;
-};
-
 const colorElement = document.getElementsByName("colorRadio");
 let color;
 colorElement.forEach((c) => {
@@ -81,8 +75,8 @@ function drawOnImage(image = null) {
 
     canvasElement.onmousedown = (e) => {
         isDrawing = true;
+        context.beginPath();
         context.lineWidth = size;
-        context.globalAlpha = alpha;
         context.strokeStyle = color;
         context.lineJoin = "round";
         context.lineCap = "round";
@@ -91,14 +85,13 @@ function drawOnImage(image = null) {
 
     canvasElement.onmousemove = (e) => {
         if (isDrawing) {
-            context.beginPath();
             context.lineTo(e.clientX, e.clientY);
             context.stroke();
-            context.closePath();
         }
     };
 
     canvasElement.onmouseup = function () {
         isDrawing = false;
+        context.closePath();
     };
 }
